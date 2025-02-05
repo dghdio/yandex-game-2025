@@ -28,6 +28,10 @@ class MenuScene(Scene):
         self.btn_quit     = Button("Выход", 'exit',
                                    rectsize=MENU_BTN_SIZE, fontsize=MENU_BTN_FONT_SIZE,
                                    topleft=Button.get_btn_pos(self.frame_btn, 2, MENU_BTN_HEIGHT))
+        self.btn_quit = Button("Убрать звук", 'mute',
+                               rectsize=MENU_BTN_SIZE, fontsize=MENU_BTN_FONT_SIZE,
+                               topleft=Button.get_btn_pos(self.frame_btn, 2, MENU_BTN_HEIGHT))
+
         self.buttons = Group(self.btn_play, self.btn_continue, self.btn_quit)
 
         self.lbl_title = Label("Yandex game", fontsize=70,

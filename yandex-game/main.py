@@ -15,7 +15,7 @@ mixer.init()
 mixer.music.load('resources/[Out of Flux - Topic] Bring the Dessert (7f-ZXyL0kDE).mp3')
 mixer.music.set_volume(0.1)
 mixer.music.play(-1)
-
+sound_on = True
 def init_game():
     screen = display.set_mode(SCREEN_SIZE, FULLSCREEN)
     display.set_caption("Yandex game")
@@ -46,7 +46,13 @@ if __name__ == '__main__':
                 event_code = game.mainloop()
             elif event_code == 'continue':
                 event_code = game.mainloop()
-            if event_code == 'gameover':
+            elif event_code == 'gameover':
                 end.set_stats(game.stats)
                 end.mainloop()
                 menu.restart()
+            elif event_code == 'mute' and sound_on == True:
+                mixer.music.pause()
+                sound_on = False
+            elif event_code == 'mute' and sound_on == False:
+                mixer.music.unpause()
+                sound_on = True

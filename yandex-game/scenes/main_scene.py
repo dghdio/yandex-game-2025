@@ -16,7 +16,7 @@ from utils.camera import Camera
 from utils.data_displayer import DataDisplayer
 from utils.config import *
 
-
+maps = ['library_map_2.tmx', 'untitled.tmx']
 class MainScene(Scene):
     """Главная игровая сцена."""
 
